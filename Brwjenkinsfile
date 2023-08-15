@@ -3,6 +3,8 @@ node{
 
 def MavenHome = tool name: "maven3.9.3" // if maven is configured in global tool configuration 
 
+//PollScm 
+properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 // code checkout From Git
 stage ('CheckoutCode'){
 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'f2d3d2ce-6cbf-4d0b-908d-de854e57183d', url: 'https://github.com/MydevopsCourse/maven-web-application--main.git']])   

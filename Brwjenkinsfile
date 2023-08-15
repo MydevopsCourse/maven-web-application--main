@@ -5,6 +5,10 @@ def MavenHome = tool name: "maven3.9.3" // if maven is configured in global tool
 
 //PollScm 
 properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+//Discard Old Builds (max 5 builds to keep)
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+
 // code checkout From Git
 stage ('CheckoutCode'){
 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'f2d3d2ce-6cbf-4d0b-908d-de854e57183d', url: 'https://github.com/MydevopsCourse/maven-web-application--main.git']])   

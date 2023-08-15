@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.233.47.101:8081/repository/brw-Release/</url>
+	      <url>http://65.0.73.58:8081/repository/BlackRhino-Release//</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.233.47.101:8081/repository/brw-snapshot/</url>
+	      <url>http://65.0.73.58:8081/repository/BlackRhino-Snaposhot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>

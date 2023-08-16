@@ -4,6 +4,7 @@ node{
 //Build name
 buildName 'DEV - $(BUILD_NUMBER)'
 
+echo "the build number is:  $(env.BUILD_NUMBER)"
 def MavenHome = tool name: "maven3.9.3" // if maven is configured in global tool configuration 
 
 //PollScm 

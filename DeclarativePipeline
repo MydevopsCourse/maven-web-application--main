@@ -30,7 +30,7 @@ stages{
 //STAGE-1 = Getting code from github
   stage ('CodeCheckout') {
     steps {
-    checkout scmGit(branches: "${params.BranchName}", extensions: [], userRemoteConfigs: [[credentialsId: 'f2d3d2ce-6cbf-4d0b-908d-de854e57183d', url: 'https://github.com/MydevopsCourse/maven-web-application--main.git']])   
+    checkout scmGit(branches: [[name:"${params.BranchName}"]], extensions: [], userRemoteConfigs: [[credentialsId: 'f2d3d2ce-6cbf-4d0b-908d-de854e57183d', url: 'https://github.com/MydevopsCourse/maven-web-application--main.git']])   
      }
    }
  

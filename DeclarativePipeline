@@ -27,6 +27,13 @@ stages{
       steps{
         sh "mvn sonar:sonar"  // here we wwil not use environment variables like scripted way
       }
+   } 
+
+// STAGE-4 = Upload Artifact to nexus 
+   stage ('Upload to Nexus'){
+      steps{
+        sh "mvn deploy"  // here we wwil not use environment variables like scripted way
+      }
    }  
   
  } // stages Closing

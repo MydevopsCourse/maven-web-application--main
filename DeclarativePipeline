@@ -39,7 +39,7 @@ stages{
 // STAGE-5 = Deploying application into Tomcat Server
    stage ('Deploy to Tomcat'){
       steps{
-         shagent(['5acd34a2-0abb-494b-a1a9-be08120fbe5a']) {
+         sshagent(['5acd34a2-0abb-494b-a1a9-be08120fbe5a']) {
    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ubuntu@172.31.0.114:/opt/tomcat/webapps"
       }
    }   

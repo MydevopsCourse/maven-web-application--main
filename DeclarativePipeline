@@ -19,7 +19,7 @@ stages{
  // STAGE-2 = Building the job 
    stage ('Building the Job'){
       steps{
-        sh mvn clean package // here we wwil not use environment variables like scripted way
+        sh "mvn clean package" // here we wwil not use environment variables like scripted way
       }
    }
   

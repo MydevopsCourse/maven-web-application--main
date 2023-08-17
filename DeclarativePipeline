@@ -43,6 +43,6 @@ stages{
    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ubuntu@172.31.0.114:/opt/tomcat/webapps"
       }
    }   
-  
+  }
  } // stages Closing
 } // Pipeline closing 

@@ -22,6 +22,12 @@ stages{
         sh "mvn clean package" // here we wwil not use environment variables like scripted way
       }
    }
+// STAGE-3 = Executing sonarqube report
+   stage ('SonarQube Report'){
+      steps{
+        sh "mvn sonar:sonar"  // here we wwil not use environment variables like scripted way
+      }
+   }  
   
  } // stages Closing
 } // Pipeline closing 

@@ -1,1 +1,27 @@
+pipeline{
 
+// Jenkins slaves = agents
+agent any
+
+// Global tool configurations here
+tools {
+    maven "maven3.9.3"
+   }
+stages{
+  
+//STAGE-1 = Getting code from github
+  stage ('CodeCheckout') {
+    steps {
+    checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'f2d3d2ce-6cbf-4d0b-908d-de854e57183d', url: 'https://github.com/MydevopsCourse/maven-web-application--main.git']])   
+     }
+   }
+ 
+ // STAGE-2 = Building the job 
+   stage ('Building the Job'){
+      steps{
+        sh mvn clean package // here we wwil not use environment variables like scripted way
+      }
+   }
+  
+ } // stages Closing
+} // Pipeline closing 

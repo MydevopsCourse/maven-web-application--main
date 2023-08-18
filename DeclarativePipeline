@@ -1,7 +1,9 @@
 pipeline{
 
 // Jenkins slaves = agents
-agent any
+agent {
+  label "slaves"
+  }
 
 // Global tool configurations here
 tools {
@@ -34,6 +36,7 @@ stages{
         sh "mvn clean package" // here we wwil not use environment variables like scripted way
       }
    }
+/*
 // STAGE-3 = Executing sonarqube report
    stage ('SonarQube Report'){
       steps{
@@ -56,5 +59,6 @@ stages{
       }
    }   
   }
+*/
  } // stages Closing
 } // Pipeline closing 
